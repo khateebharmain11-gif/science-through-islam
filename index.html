@@ -1,0 +1,1011 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Science Through Islam | Explore the Wonders of Creation</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #071510;
+  --surface: #10251d;
+  --surface2: #18372a;
+  --text: #f5f8ed;
+  --muted: #b6c9ba;
+  --gold: #e6c77a;
+  --green: #70d6a4;
+  --border: rgba(255,255,255,.12);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+a { text-decoration: none; }
+
+.navbar {
+  background: rgba(7,21,16,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.navbar-brand:hover { color: var(--gold); }
+
+.nav-link {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.navbar-toggler { border-color: var(--border); }
+.navbar-toggler-icon { filter: invert(1); }
+
+.gold { color: var(--gold); }
+
+.hero {
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(4,17,12,.94),
+    rgba(4,17,12,.70) 55%, rgba(4,17,12,.20)),
+    url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=85')
+    center/cover no-repeat;
+}
+
+.hero-content {
+  padding-top: 120px;
+  padding-bottom: 110px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 7px 15px;
+  color: var(--gold);
+  border: 1px solid rgba(230,199,122,.4);
+  border-radius: 50px;
+  background: rgba(230,199,122,.08);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 1.12;
+  margin: 25px 0;
+}
+
+.hero p {
+  max-width: 680px;
+  color: #d1ded2;
+  font-size: 1.1rem;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #172016;
+  border: 1px solid var(--gold);
+  padding: 13px 24px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.btn-gold:hover {
+  background: #f2d995;
+  border-color: #f2d995;
+  color: #172016;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light-custom {
+  color: white;
+  border: 1px solid rgba(255,255,255,.4);
+  padding: 13px 24px;
+  border-radius: 10px;
+}
+
+.btn-outline-light-custom:hover {
+  background: white;
+  color: #10251d;
+}
+
+.section { padding: 95px 0; }
+
+.section-label {
+  color: var(--gold);
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin: 12px 0 18px;
+}
+
+.muted { color: var(--muted); }
+
+.topic-card {
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: .3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold);
+}
+
+.topic-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.topic-content { padding: 25px; }
+
+.topic-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  background: rgba(230,199,122,.12);
+  border-radius: 14px;
+  font-size: 1.5rem;
+  margin-bottom: 17px;
+}
+
+.topic-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 12px;
+}
+
+.topic-card p { color: var(--muted); }
+
+.read-more {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.read-more:hover { color: white; }
+
+.verse-box {
+  background:
+    radial-gradient(circle at top right,
+      rgba(112,214,164,.14), transparent 45%),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: clamp(28px, 5vw, 55px);
+}
+
+.arabic {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 2;
+  color: var(--gold);
+  direction: rtl;
+  font-family: serif;
+}
+
+.reference {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 27px;
+  height: 100%;
+}
+
+.step-number {
+  color: var(--gold);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.faq .accordion-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq .accordion-button {
+  background: var(--surface);
+  color: var(--text);
+  padding: 20px;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.faq .accordion-button::after {
+  filter: invert(.8);
+}
+
+.faq .accordion-button:not(.collapsed) { color: var(--gold); }
+
+.faq .accordion-body { color: var(--muted); }
+
+.cta {
+  text-align: center;
+  padding: 65px 25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+  color: var(--muted);
+}
+
+.modal-content {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.modal-header, .modal-footer { border-color: var(--border); }
+
+@media(max-width:767px) {
+  .hero { min-height: auto; background-position: 58% center; }
+  .hero-content { padding-top: 130px; padding-bottom: 100px; }
+  .section { padding: 65px 0; }
+  .topic-card img { height: 210px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <i class="bi bi-moon-stars gold"></i>
+      Science Through Islam
+    </a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navMenu"
+      aria-controls="navMenu" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#topics">Topics</a></li>
+        <li class="nav-item"><a class="nav-link" href="#quran">Quran & Science</a></li>
+        <li class="nav-item"><a class="nav-link" href="#history">History</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="container hero-content">
+    <span class="tag">
+      <i class="bi bi-stars me-2"></i>
+      FAITH • KNOWLEDGE • DISCOVERY
+    </span>
+
+    <h1>
+      Discover the Wonders<br>
+      of Creation Through<br>
+      <span class="gold">Islamic Wisdom.</span>
+    </h1>
+
+    <p>
+      Explore the universe, human life, oceans, mountains, and the natural
+      world through scientific discoveries and Islamic teachings.
+      A journey connecting curiosity, reflection, and knowledge.
+    </p>
+
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="#topics" class="btn btn-gold">
+        Explore the Topics <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+      <a href="#quran" class="btn btn-outline-light-custom">
+        Discover Quranic Verses
+      </a>
+    </div>
+
+    <div class="d-flex flex-wrap gap-4 mt-5 text-white">
+      <div>
+        <h4 class="gold mb-0">Universe</h4>
+        <small class="text-white-50">Cosmic wonders</small>
+      </div>
+      <div>
+        <h4 class="gold mb-0">Nature</h4>
+        <small class="text-white-50">Earth and life</small>
+      </div>
+      <div>
+        <h4 class="gold mb-0">Knowledge</h4>
+        <small class="text-white-50">Faith and discovery</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- INTRODUCTION -->
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img
+          src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85"
+          alt="Earth seen from space"
+          class="img-fluid rounded-4 w-100"
+          loading="lazy">
+      </div>
+
+      <div class="col-lg-6">
+        <div class="section-label">The Beginning of Discovery</div>
+        <h2 class="section-title">
+          Look at the world.<br>
+          <span class="gold">Reflect on its meaning.</span>
+        </h2>
+
+        <p class="muted">
+          The Quran frequently invites people to reflect on the heavens,
+          the Earth, living things, and the signs of creation. Science
+          investigates how natural processes work, while Islamic teachings
+          encourage reflection on existence, purpose, and the Creator.
+        </p>
+
+        <p class="muted">
+          Studying both perspectives can be intellectually rewarding.
+          However, a Quranic verse should be understood in its linguistic
+          and historical context, and scientific claims should be evaluated
+          using scientific evidence rather than assumed from a resemblance
+          between a verse and a modern discovery.
+        </p>
+
+        <a href="#topics" class="btn btn-gold mt-2">
+          Begin Your Journey
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="section" id="topics" style="background:rgba(255,255,255,.018)">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">Explore the Wonders</div>
+      <h2 class="section-title">Science Through Islamic Teachings</h2>
+      <p class="muted mx-auto" style="max-width:700px">
+        Discover important scientific subjects alongside relevant Quranic
+        passages, their context, and what modern research tells us.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- UNIVERSE -->
+      <div class="col-md-6 col-lg-4">
+        <article class="topic-card">
+          <img
+            src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=85"
+            alt="Stars and distant galaxies" loading="lazy">
+          <div class="topic-content">
+            <div class="topic-icon"><i class="bi bi-stars"></i></div>
+            <h3>The Universe</h3>
+            <p>
+              Explore galaxies, stars, the Big Bang, and the Quranic
+              invitation to reflect on the heavens and their creation.
+            </p>
+            <button class="read-more" data-topic="universe">
+              Explore topic <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- HUMAN BODY -->
+      <div class="col-md-6 col-lg-4">
+        <article class="topic-card">
+          <img
+            src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=900&q=85"
+            alt="Medical and human biology study" loading="lazy">
+          <div class="topic-content">
+            <div class="topic-icon"><i class="bi bi-heart-pulse"></i></div>
+            <h3>Human Creation</h3>
+            <p>
+              Learn about embryology, human development, and Quranic
+              passages discussing human creation and life.
+            </p>
+            <button class="read-more" data-topic="human">
+              Explore topic <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- OCEANS -->
+      <div class="col-md-6 col-lg-4">
+        <article class="topic-card">
+          <img
+            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85"
+            alt="Ocean waves and sea" loading="lazy">
+          <div class="topic-content">
+            <div class="topic-icon"><i class="bi bi-water"></i></div>
+            <h3>Oceans and Water</h3>
+            <p>
+              Explore the water cycle, ocean ecosystems, and Quranic
+              references to fresh water, salt water, and seas.
+            </p>
+            <button class="read-more" data-topic="oceans">
+              Explore topic <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- MOUNTAINS -->
+      <div class="col-md-6 col-lg-4">
+        <article class="topic-card">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"
+            alt="Majestic mountain range" loading="lazy">
+          <div class="topic-content">
+            <div class="topic-icon"><i class="bi bi-mountains"></i></div>
+            <h3>Mountains and Earth</h3>
+            <p>
+              Understand mountain formation, plate tectonics, and Quranic
+              passages that invite reflection on the Earth.
+            </p>
+            <button class="read-more" data-topic="mountains">
+              Explore topic <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- PLANTS -->
+      <div class="col-md-6 col-lg-4">
+        <article class="topic-card">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85"
+            alt="Sunlight entering a green forest" loading="lazy">
+          <div class="topic-content">
+            <div class="topic-icon"><i class="bi bi-flower1"></i></div>
+            <h3>Plants and Nature</h3>
+            <p>
+              Discover photosynthesis, plant growth, biodiversity, and
+              Islamic teachings about the natural world.
+            </p>
+            <button class="read-more" data-topic="plants">
+              Explore topic <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- WATER CYCLE -->
+      <div class="col-md-6 col-lg-4">
+        <article class="topic-card">
+          <img
+            src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=900&q=85"
+            alt="Waterfall flowing through nature" loading="lazy">
+          <div class="topic-content">
+            <div class="topic-icon"><i class="bi bi-cloud-rain"></i></div>
+            <h3>Rain and the Water Cycle</h3>
+            <p>
+              Follow evaporation, cloud formation, rainfall, and the
+              role of water in sustaining life on Earth.
+            </p>
+            <button class="read-more" data-topic="rain">
+              Explore topic <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QURAN AND SCIENCE -->
+<section class="section" id="quran">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">Reflection in the Quran</div>
+      <h2 class="section-title">Verses About the Natural World</h2>
+      <p class="muted mx-auto" style="max-width:700px">
+        The Quran points readers toward the heavens, the Earth, rain,
+        and living things as subjects for reflection.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="verse-box h-100">
+          <div class="topic-icon"><i class="bi bi-stars"></i></div>
+          <h3>The Heavens and the Earth</h3>
+
+          <p class="arabic">
+            إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ
+            وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ
+            لِأُولِي الْأَلْبَابِ
+          </p>
+
+          <p class="muted">
+            “Indeed, in the creation of the heavens and the earth and
+            the alternation of the night and the day are signs for
+            those of understanding.”
+          </p>
+
+          <div class="reference">Quran 3:190</div>
+          <hr style="border-color:var(--border)">
+          <p class="muted mb-0">
+            Scientific connection: astronomy, planetary motion, and the
+            study of Earth's rotation and the day-night cycle. The verse
+            invites reflection; it is not itself a technical astronomy text.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="verse-box h-100">
+          <div class="topic-icon"><i class="bi bi-water"></i></div>
+          <h3>Water and Living Things</h3>
+
+          <p class="arabic">
+            وَجَعَلْنَا مِنَ الْمَاءِ كُلَّ شَيْءٍ حَيٍّ
+          </p>
+
+          <p class="muted">
+            “And We made from water every living thing.”
+          </p>
+
+          <div class="reference">Quran 21:30</div>
+          <hr style="border-color:var(--border)">
+          <p class="muted mb-0">
+            Scientific connection: water is essential for all known life
+            on Earth and plays a central role in biological processes.
+            The verse's theological meaning and the scientific details
+            should be studied in their respective contexts.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="verse-box h-100">
+          <div class="topic-icon"><i class="bi bi-cloud-rain"></i></div>
+          <h3>Rain and Plant Growth</h3>
+          <p class="muted">
+            Quran 30:48 describes winds, clouds, and rainfall, followed
+            by the spreading of rain across the land.
+          </p>
+          <div class="reference">Quran 30:48</div>
+          <hr style="border-color:var(--border)">
+          <p class="muted mb-0">
+            Scientific connection: atmospheric circulation, cloud
+            formation, precipitation, and the hydrological cycle.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="verse-box h-100">
+          <div class="topic-icon"><i class="bi bi-search"></i></div>
+          <h3>Observe and Reflect</h3>
+          <p class="muted">
+            Quran 88:17–20 invites reflection on the camel, the sky,
+            the mountains, and the Earth.
+          </p>
+          <div class="reference">Quran 88:17–20</div>
+          <hr style="border-color:var(--border)">
+          <p class="muted mb-0">
+            Scientific connection: zoology, atmospheric science,
+            geology, and the study of Earth's landscapes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="muted small mt-4">
+      Note: English translations vary. These passages are presented
+      alongside scientific topics for educational reflection, not as
+      proof that every modern scientific theory is explicitly stated
+      in the Quran.
+    </p>
+  </div>
+</section>
+
+<!-- HISTORICAL SCHOLARS -->
+<section class="section" id="history" style="background:rgba(255,255,255,.018)">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <img
+          src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1000&q=85"
+          alt="Bookshelves representing the pursuit of knowledge"
+          class="img-fluid rounded-4 w-100"
+          loading="lazy">
+        <div class="section-label mt-4">History of Knowledge</div>
+        <h2 class="section-title">Muslim Scholars Who Changed the World</h2>
+        <p class="muted">
+          Scholars working in the medieval Islamic world contributed to
+          scientific and philosophical traditions, building on ideas
+          from many cultures and passing knowledge to later generations.
+        </p>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="d-grid gap-3">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Al-Khwarizmi</h3>
+            <p class="muted mb-0">
+              His influential writings on algebra helped shape the
+              development of mathematics.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Ibn al-Haytham</h3>
+            <p class="muted mb-0">
+              His investigations of light and vision made important
+              contributions to the history of optics.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Ibn Sina (Avicenna)</h3>
+            <p class="muted mb-0">
+              His medical and philosophical writings influenced
+              scholarship in multiple regions for centuries.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3>Al-Biruni</h3>
+            <p class="muted mb-0">
+              He studied astronomy, mathematics, geography, and
+              different cultures with remarkable breadth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO LEARN -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">Learn Responsibly</div>
+      <h2 class="section-title">How to Understand Science Through Islam</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Read the Verse</h3>
+          <p class="muted mb-0">
+            Study the Quranic passage, its translation, surrounding
+            verses, and explanations from qualified scholars.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Understand the Science</h3>
+          <p class="muted mb-0">
+            Consult reliable scientific sources and distinguish
+            established findings from hypotheses and speculation.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Compare Carefully</h3>
+          <p class="muted mb-0">
+            Explore possible connections without forcing a modern
+            scientific meaning onto a religious text.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">Frequently Asked Questions</div>
+      <h2 class="section-title">Questions and Answers</h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="accordion faq" id="faqAccordion">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq1"
+                aria-expanded="true" aria-controls="faq1">
+                Does the Quran encourage scientific thinking?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                The Quran repeatedly invites reflection on nature,
+                creation, and the world. Many Muslims understand these
+                passages as encouragement to observe and think, although
+                scientific research itself requires appropriate methods
+                and empirical evidence.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq2"
+                aria-expanded="false" aria-controls="faq2">
+                Does the Quran explain the Big Bang?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Some Muslim writers connect Quran 21:30 with modern
+                cosmology. Interpretations differ, however, and the verse
+                should not automatically be treated as a precise statement
+                of the modern Big Bang model. The Big Bang model is supported
+                by scientific evidence including cosmic expansion and the
+                cosmic microwave background.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq3"
+                aria-expanded="false" aria-controls="faq3">
+                Are all scientific discoveries mentioned in the Quran?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                The Quran is a religious text, not a comprehensive modern
+                science textbook. Readers may find spiritual significance
+                in passages about nature, but claims that a particular verse
+                predicts a scientific discovery need careful textual and
+                historical examination.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq4"
+                aria-expanded="false" aria-controls="faq4">
+                Why did Muslim scholars study science?
+              </button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Historical motivations included practical needs, medical
+                and astronomical applications, philosophical inquiry,
+                intellectual curiosity, patronage, and religious and
+                cultural interests. Scholars worked across diverse fields
+                and intellectual traditions.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+<section class="pb-5">
+  <div class="container">
+    <div class="cta">
+      <i class="bi bi-stars gold fs-1"></i>
+      <h2 class="section-title mt-3">The Journey of Knowledge Never Ends</h2>
+      <p class="muted mx-auto" style="max-width:650px">
+        Explore the natural world with curiosity, study Islamic teachings
+        thoughtfully, and approach both scientific evidence and religious
+        interpretation with care.
+      </p>
+      <a href="#topics" class="btn btn-gold">
+        Explore All Topics <i class="bi bi-arrow-up ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container text-center">
+    <h4 class="text-white">
+      <i class="bi bi-moon-stars gold"></i>
+      Science Through Islam
+    </h4>
+    <p class="small mb-2">
+      Exploring creation, scientific discovery, and Islamic thought.
+    </p>
+    <p class="small mb-0">
+      © <span id="year"></span> Science Through Islam. Educational website.
+    </p>
+  </div>
+</footer>
+
+<!-- TOPIC DETAILS MODAL -->
+<div class="modal fade" id="topicModal" tabindex="-1"
+  aria-labelledby="topicModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="topicModalTitle">Explore the topic</h2>
+        <button type="button" class="btn-close btn-close-white"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p id="topicModalText" class="muted"></p>
+        <div class="p-3 rounded-3"
+          style="background:var(--surface2)">
+          <strong class="gold">Suggested next step</strong>
+          <p id="topicModalStudy" class="muted mb-0 mt-2"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gold"
+          data-bs-dismiss="modal">Continue Exploring</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Close the mobile menu when a navigation link is selected.
+document.querySelectorAll("#navMenu .nav-link").forEach(function(link) {
+  link.addEventListener("click", function() {
+    const menu = document.getElementById("navMenu");
+
+    if (menu.classList.contains("show")) {
+      bootstrap.Collapse.getOrCreateInstance(menu).hide();
+    }
+  });
+});
+
+// Topic details displayed in the working modal.
+const topicDetails = {
+  universe: {
+    title: "The Universe and Islamic Thought",
+    text: "Modern cosmology investigates the universe's expansion, early history, stars, galaxies, and physical laws. Quran 21:30 is sometimes discussed in connection with cosmology, but its interpretation is debated. Read the verse in context and study the independent scientific evidence for the Big Bang model.",
+    study: "Study Quran 21:30, the history of cosmology, cosmic expansion, and the cosmic microwave background."
+  },
+
+  human: {
+    title: "Human Creation and Biology",
+    text: "Biology investigates fertilization, embryonic development, genetics, and human anatomy. The Quran discusses human creation in several passages, including 23:12–14. Connecting these texts to modern embryology requires attention to the original language, historical context, and the details of current science.",
+    study: "Read Quran 23:12–14 alongside a reliable introductory embryology textbook and scholarly commentary."
+  },
+
+  oceans: {
+    title: "Oceans and Water",
+    text: "Oceanography studies salinity, currents, marine ecosystems, and the interactions between bodies of water. Quran 25:53 refers to bodies of water, one fresh and one salty, and includes a barrier between them. Real-world water boundaries vary with currents, density, tides, and mixing.",
+    study: "Explore salinity, estuaries, ocean circulation, and Quran 25:53 with a trusted commentary."
+  },
+
+  mountains: {
+    title: "Mountains and the Earth",
+    text: "Geology explains mountains through processes such as plate collisions, volcanic activity, uplift, and erosion. Quran 78:6–7 refers to mountains using the image of pegs. Scientific claims about this imagery should be evaluated against modern geological evidence rather than assumed from the metaphor alone.",
+    study: "Learn about plate tectonics, mountain formation, and the context of Quran 78:6–7."
+  },
+
+  plants: {
+    title: "Plants and the Natural World",
+    text: "Botany investigates plant cells, photosynthesis, reproduction, and ecosystems. The Quran frequently mentions plants, crops, gardens, and growth as signs for reflection. These themes can inspire appreciation for the natural world and responsible stewardship.",
+    study: "Explore photosynthesis, plant ecology, biodiversity, and Quranic passages about gardens and vegetation."
+  },
+
+  rain: {
+    title: "Rain and the Water Cycle",
+    text: "The water cycle includes evaporation, condensation, precipitation, infiltration, and runoff. Quran 30:48 describes winds, clouds, and rainfall. This provides an opportunity to reflect on rain while learning the detailed mechanisms from meteorology.",
+    study: "Study evaporation, cloud formation, precipitation, and Quran 30:48."
+  }
+};
+
+const topicModal = bootstrap.Modal.getOrCreateInstance(
+  document.getElementById("topicModal")
+);
+
+document.querySelectorAll("[data-topic]").forEach(function(button) {
+  button.addEventListener("click", function() {
+    const details = topicDetails[button.dataset.topic];
+
+    if (!details) return;
+
+    document.getElementById("topicModalTitle").textContent = details.title;
+    document.getElementById("topicModalText").textContent = details.text;
+    document.getElementById("topicModalStudy").textContent = details.study;
+
+    topicModal.show();
+  });
+});
+</script>
+
+</body>
+</html>
